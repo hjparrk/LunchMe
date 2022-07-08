@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import LoginInput from "./components/Login/LoginInput";
+import LoginInput from "./components/login/LoginInput";
 
 export default function App() {
   function loginHandler(enteredEmail, enteredPassword) {
