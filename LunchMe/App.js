@@ -1,20 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import LoginInput from "./components/Login/LoginInput";
 
 export default function App() {
+  function loginHandler(enteredEmail, enteredPassword) {
+    console.log("Entered email: " + enteredEmail);
+    console.log("Entered Password " + enteredPassword);
+    console.log("");
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <View style={styles.logoContainer}>
+        <Text style={styles.logoText}>Lunch Me</Text>
+      </View>
+      <View style={styles.loginContainer}>
+        <LoginInput onLogin={loginHandler} />
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  logoContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "column",
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    marginBottom: 0,
+  },
+  loginContainer: {
+    flex: 1,
+  },
+  logoText: {
+    fontSize: 35,
+    textAlign: "center",
+    borderColor: "grey",
+    margin: 16,
+    padding: 16,
+    borderWidth: 3,
+    borderRadius: 16,
+    width: "50%",
   },
 });
