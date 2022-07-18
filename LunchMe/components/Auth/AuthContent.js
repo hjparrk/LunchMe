@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { Alert, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import AuthForm from "./AuthForm";
@@ -57,8 +57,8 @@ function AuthContent({ isLogin, onAuthenticate }) {
   return (
     <View>
       <AuthForm isLogin={isLogin} onSubmit={submitHandler} />
-      <View style={styles.buttons}>
-        <Text>
+      <View className="items-center flex-row mt-10">
+        <Text className="ml-10 mr-10">
           {isLogin ? "Don't you have an account?" : "Already got an account?"}
         </Text>
         <Button onPress={switchAuthModeHandler}>
@@ -70,12 +70,3 @@ function AuthContent({ isLogin, onAuthenticate }) {
 }
 
 export default AuthContent;
-
-const styles = StyleSheet.create({
-  buttons: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 24,
-  },
-});

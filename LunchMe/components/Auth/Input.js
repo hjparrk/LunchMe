@@ -1,11 +1,11 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput } from "react-native";
 
 function Input({ label, keyboardType, secure, value, onUpdateValue }) {
   return (
-    <View style={styles.inputContainer}>
-      <Text style={styles.label}>{label}</Text>
+    <View className="items-center">
+      <Text className="m-5 text-lg">{label}</Text>
       <TextInput
-        style={styles.input}
+        className="bg-yellow-400 rounded-md border-2 border-dashed space-y-1 w-1/2 pb-2 pl-2 text-2xl"
         autoCapitalize="none"
         keyboardType={keyboardType}
         secureTextEntry={secure}
@@ -17,20 +17,3 @@ function Input({ label, keyboardType, secure, value, onUpdateValue }) {
 }
 
 export default Input;
-
-const styles = StyleSheet.create({
-  inputContainer: {
-    marginVertical: 8,
-  },
-  label: {
-    color: "grey",
-    marginBottom: 4,
-  },
-  input: {
-    paddingVertical: 8,
-    paddingHorizontal: 6,
-    backgroundColor: "pink",
-    borderRadius: 4,
-    fontSize: 16,
-  },
-});
