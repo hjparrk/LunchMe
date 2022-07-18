@@ -56,6 +56,7 @@ export default function AuthForm({ isLogin, onSubmit }) {
         <Input
           label="Password"
           value={enteredPassword}
+          secure={true}
           keyboardType="default"
           onUpdateValue={updateInputValueHandler.bind(this, "password")}
         />
@@ -63,6 +64,7 @@ export default function AuthForm({ isLogin, onSubmit }) {
           <Input
             label="Confirm Password"
             value={enteredConfirmPassword}
+            secure={true}
             keyboardType="default"
             onUpdateValue={updateInputValueHandler.bind(
               this,
@@ -73,7 +75,7 @@ export default function AuthForm({ isLogin, onSubmit }) {
       </View>
       <View style={styles.buttons}>
         <Button onPress={submitHandler}>
-          {isLogin ? "Login up" : "Sign up"}
+          {isLogin ? "Log in" : "Sign up"}
         </Button>
       </View>
     </View>
@@ -82,7 +84,7 @@ export default function AuthForm({ isLogin, onSubmit }) {
 
 const styles = StyleSheet.create({
   buttons: {
-    marginTop: 12,
+    marginTop: 24,
     backgroundColor: "black",
   },
 });
