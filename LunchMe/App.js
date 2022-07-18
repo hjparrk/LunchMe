@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { TailwindProvider } from "tailwindcss-react-native";
 
-import { Colors } from "./constants/styles";
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import HomeScreen from "./screens/HomeScreen";
@@ -17,9 +16,7 @@ function AuthStack() {
     <Stack.Navigator
       initialRouteName="Login"
       screenOptions={{
-        headerStyle: { backgroundColor: "green" },
-        headerTintColor: "white",
-        contentStyle: { backgroundColor: "yellow" },
+        headerShown: false,
       }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
@@ -31,11 +28,8 @@ function AuthStack() {
 function AuthenticatedStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
       screenOptions={{
-        headerStyle: { backgroundColor: "green" },
-        headerTintColor: "white",
-        contentStyle: { backgroundColor: "yellow" },
+        headerShown: false,
       }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
@@ -57,12 +51,12 @@ function Navigation() {
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
-      <AuthContextProvider>
-        <Navigation />
-      </AuthContextProvider>
+      <TailwindProvider>
+        <StatusBar style="dark" />
+        <AuthContextProvider>
+          <Navigation />
+        </AuthContextProvider>
+      </TailwindProvider>
     </>
   );
 }
-
-const styles = StyleSheet.create({});

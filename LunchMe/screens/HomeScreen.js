@@ -1,5 +1,12 @@
-import { Text } from "react-native";
+import React from "react";
+import { Text, View } from "react-native";
 
-export default function HomeScreen() {
-  return <Text>Home Screen!</Text>;
+function HomeScreen() {
+  return (
+    <View>
+      <Text className="text-red-500">Home Screen!!!!</Text>
+    </View>
+  );
 }
+
+export default HomeScreen;

@@ -1,7 +1,5 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-import { Colors } from "../../constants/styles";
-
 function Input({ label, keyboardType, secure, value, onUpdateValue }) {
   return (
     <View style={styles.inputContainer}>

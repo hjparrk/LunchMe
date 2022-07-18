@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import AuthForm from "./AuthForm";
 import Button from "../ui/Button";
 import { useState } from "react";
 
-export default function AuthContent({ isLogin, onAuthenticate }) {
+function AuthContent({ isLogin, onAuthenticate }) {
   const navigation = useNavigation();
 
   const [credentialsInvalid, setCredentialsInvalid] = useState({
@@ -36,11 +36,6 @@ export default function AuthContent({ isLogin, onAuthenticate }) {
     const passwordIsValid = password.length > 6;
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
-
-    console.log(email);
-    console.log(confirmEmail);
-    console.log(password);
-    console.log(confirmPassword);
 
     if (
       !emailIsValid ||
@@ -73,6 +68,8 @@ export default function AuthContent({ isLogin, onAuthenticate }) {
     </View>
   );
 }
+
+export default AuthContent;
 
 const styles = StyleSheet.create({
   buttons: {

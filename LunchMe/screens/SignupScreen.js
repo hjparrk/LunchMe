@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 
 import AuthContent from "../components/Auth/AuthContent";
 import { AuthContext } from "../store/auth-context";
 import { createUser } from "../util/auth";
 
-export default function SignupScreen({ navigation }) {
+function SignupScreen({ navigation }) {
   const authCtx = useContext(AuthContext);
 
   async function signupHandler({ email, password }) {
@@ -21,8 +21,9 @@ export default function SignupScreen({ navigation }) {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <AuthContent isLogin={false} onAuthenticate={signupHandler} />
-    </View>
+    </SafeAreaView>
   );
 }
+export default SignupScreen;

@@ -4,7 +4,7 @@ import { View, StyleSheet } from "react-native";
 import Input from "./Input";
 import Button from "../ui/Button";
 
-export default function AuthForm({ isLogin, onSubmit }) {
+function AuthForm({ isLogin, onSubmit }) {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredConfirmEmail, setEnteredConfirmEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
@@ -81,6 +81,8 @@ export default function AuthForm({ isLogin, onSubmit }) {
     </View>
   );
 }
+
+export default AuthForm;
 
 const styles = StyleSheet.create({
   buttons: {

@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 import AuthContent from "../components/Auth/AuthContent";
 import { AuthContext } from "../store/auth-context";
 import { loginUser } from "../util/auth";
 
-export default function LoginScreen() {
+function LoginScreen() {
   const authCtx = useContext(AuthContext);
 
   async function loginHandler({ email, password }) {
@@ -17,8 +17,10 @@ export default function LoginScreen() {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <AuthContent isLogin={true} onAuthenticate={loginHandler} />
-    </View>
+    </SafeAreaView>
   );
 }
+
+export default LoginScreen;
