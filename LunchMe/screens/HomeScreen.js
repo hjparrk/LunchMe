@@ -15,7 +15,7 @@ function HomeScreen() {
     authCtx.logout();
   }
 
-  function loginHandler() {
+  function titleColorChangeHandler() {
     if (isClicked) {
       setTitleColor("text-green-500");
     } else {
@@ -41,7 +41,7 @@ function HomeScreen() {
         name="checkcircle"
         size={36}
         color="black"
-        onPress={loginHandler}
+        onPress={titleColorChangeHandler}
       />
     </SafeAreaView>
   );
