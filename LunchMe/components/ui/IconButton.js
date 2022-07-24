@@ -17,4 +17,3 @@ function IconButton({ iconFamily, name, size, color, onPress }) {
 }
 
 export default IconButton;
-// test
